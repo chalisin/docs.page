@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM node:lts-alpine3.13
+FROM node:14-alpine3.12
 RUN npm install pm2 -g
 
 ARG ROOT_DIR=default_value
