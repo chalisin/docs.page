@@ -9,7 +9,7 @@ import rehypeHeadings from './plugins/rehype-headings.js';
 import remarkComponentCheck from './plugins/remark-component-check.js';
 import remarkUndeclaredVariables from './plugins/remark-undeclared-variables.js';
 import rehypeCodeBlocks from './plugins/rehype-code-blocks.js';
-import rehypeInlineBadges from './plugins/rehype-inline-badges.js';
+// import rehypeInlineBadges from './plugins/rehype-inline-badges.js';
 
 export const setupXdmOptions = ({
   output,
@@ -42,7 +42,7 @@ export const setupXdmOptions = ({
     rehypeCodeBlocks,
     // Add an `id` to all heading tags
     rehypeSlug,
-    rehypeInlineBadges,
+    // rehypeInlineBadges,
     [
       rehypeHeadings,
       {
