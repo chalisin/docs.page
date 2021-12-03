@@ -24,7 +24,7 @@ ENV __ROOT_DIR=$ROOT_DIR
 
 WORKDIR /opt/app
 COPY $__ROOT_DIR/package.json /opt/app/$__ROOT_DIR/package.json
-RUN cd $__ROOT_DIR && yarn install --ignore-scripts
+RUN cd $__ROOT_DIR && yarn set version 1.22.14 && yarn install --ignore-scripts
 
 COPY $__ROOT_DIR /opt/app/$__ROOT_DIR
 WORKDIR /opt/app/$__ROOT_DIR
