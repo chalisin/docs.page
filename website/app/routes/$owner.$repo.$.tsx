@@ -1,11 +1,12 @@
 import { useHydratedMdx } from '@docs.page/client';
-import { MetaFunction, useLoaderData, LinksFunction } from 'remix';
+import { fetchBundle } from '@docs.page/server';
+import { MetaFunction, useLoaderData, LinksFunction, LoaderFunction } from 'remix';
 import { Footer } from '~/components/Footer';
 import { Header } from '~/components/Header';
 import { YouTube } from '~/components/mdx';
 import { Sidebar } from '~/components/Sidebar';
 import { Theme } from '~/components/Theme';
-import documentationLoader from '../loaders/documentation.server';
+import documentationLoader from '../loaders/documentationLoader.server';
 
 export const loader = documentationLoader;
 
@@ -23,12 +24,12 @@ export const meta: MetaFunction = () => ({
 
 export default function Page() {
   const data = useLoaderData();
-  const Component = useHydratedMdx(data.bundled);
+  const Component = useHydratedMdx({ code: data.bundle });
 
   return (
     <>
       <Theme />
-      <Banner />
+      {/* <Banner /> */}
       <Header />
       <div className="max-w-8xl mx-auto">
         <div className="fixed inset-0 py-10 px-8 overflow-x-auto top-14 left-[max(0px,calc(50%-45rem))] w-64">
@@ -37,8 +38,8 @@ export default function Page() {
         <div className="pt-10 pl-72">
           <div className="mr-52 pr-16">
             <main>
-              Content Here
-              <div>{JSON.stringify(data.bundle)}</div>
+              <Component />
+              {/* <div>{JSON.stringify(data.bundle)}</div> */}
             </main>
             <Footer />
           </div>

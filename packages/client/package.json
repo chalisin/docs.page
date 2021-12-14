@@ -1,9 +1,9 @@
 {
   "name": "@docs.page/client",
   "version": "1.0.0",
-  "main": "dist/bundle.es.js",
+  "main": "dist/bundle.cjs.js",
   "license": "MIT",
-  "module": "dist/bundle.cjs.js",
+  "module": "dist/bundle.es.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && rollup -c"
