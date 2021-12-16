@@ -32,7 +32,7 @@ export function Error({
         <Title statusCode={statusCode} />
         <div className="my-16 prose dark:prose-dark max-w-none">
           {statusCode === 500 && <ServerError />}
-          {statusCode !== 500 && foundDocs ? <NotFound /> : <PageMissing />}
+          {statusCode !== 500 && foundDocs ? <PageMissing /> : <NotFound />}
         </div>
         <QuickLinks />
         <Footer />
